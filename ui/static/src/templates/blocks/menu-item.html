@@ -1,0 +1,47 @@
+<div class="row row-same-height padding-40">
+    <div class="col-sm-10">
+        <div class="" ng-repeat="item in menu.$private.category.items">
+            <div class="row row-same-height">
+                <div class="col-sm-1">
+                    {{$index + 1}}
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group form-group-default">
+                        <label for="{{$index}}-item">Name ( E.g. French Fries)</label>
+                        <input ng-disabled="item.__unknown" type="text" class="form-control"
+                               id="{{$index}}-item" ng-model="item.name">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group form-group-default">
+                        <label for="{{$index}}-item-description">Description</label>
+                        <textarea ng-disabled="item.__unknown" id="{{$index}}-item-description" rows="5"
+                                  class="form-control"
+                                  ng-model="item.description"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <div class="pager wizard">
+            <!-- Done Button-->
+            <div class="next m-b-15 clearfix">
+                <button type="button" ng-click="doneWithItems()"
+                        class="btn btn-primary btn-cons btn-animated
+                                    from-left fa fa-check pull-right">
+                    <span>Done with {{menu.$private.category.name}}</span>
+                </button>
+            </div>
+            <!-- end: Done button-->
+            <!-- begin: Add more -->
+            <div class="m-b-15 clearfix">
+                <button type="button" ng-click="addMenuItems(menu.$private.category)"
+                        class="btn btn-info btn-cons btn-animated from-left fa fa-plus pull-right">
+                    <span>Add More</span>
+                </button>
+            </div>
+            <!-- end: add more-->
+        </div>
+    </div>
+</div>

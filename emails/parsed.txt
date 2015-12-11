@@ -1,0 +1,58 @@
+From nobody Thu Oct  1 14:02:37 2015
+Delivered-To: letswikit@gmail.com
+Received: by 10.202.50.67 with SMTP id y64csp693106oiy;
+ Thu, 1 Oct 2015 13:23:59 -0700 (PDT)
+X-Received: by 10.66.147.74 with SMTP id ti10mr14763639pab.88.1443731039316;
+ Thu, 01 Oct 2015 13:23:59 -0700 (PDT)
+Return-Path: <Monica_Wang@symantec.com>
+Received: from ecl1mtaoutpex02.symantec.com (ecl1mtaoutpex02.symantec.com.
+ [166.98.1.210])
+ by mx.google.com with ESMTPS id aj8si11192027pad.206.2015.10.01.13.23.59
+ for <letswikit@gmail.com> (version=TLS1 cipher=RC4-SHA bits=128/128);
+ Thu, 01 Oct 2015 13:23:59 -0700 (PDT)
+Received-SPF: pass (google.com: domain of Monica_Wang@symantec.com designates
+ 166.98.1.210 as permitted sender) client-ip=166.98.1.210; 
+Authentication-Results: mx.google.com;
+ spf=pass (google.com: domain of Monica_Wang@symantec.com designates
+ 166.98.1.210 as permitted sender) smtp.mailfrom=Monica_Wang@symantec.com; 
+ dmarc=pass (p=NONE dis=NONE) header.from=symantec.com
+X-AuditID: a66201d2-f79ce6d000002ca4-aa-560d964dc7e3
+Received: from ecl1mtahubpin01.ges.symantec.com (uscu-zone.relay.symantec.com
+ [10.48.69.201])
+ by ecl1mtaoutpex02.symantec.com (Symantec Brightmail Gateway out) with SMTP id
+ 2D.4D.11428.D469D065; Thu,  1 Oct 2015 20:23:41 +0000 (GMT)
+Received: from [155.64.220.137] (helo=TUS1XCHHUBPIN01.SYMC.SYMANTEC.COM)
+ by ecl1mtahubpin01.ges.symantec.com with esmtp (Exim 4.76)
+ (envelope-from <Monica_Wang@symantec.com>) id 1ZhkOC-0001Lz-Np
+ for letswikit@gmail.com; Thu, 01 Oct 2015 20:23:40 +0000
+Received: from TUS1XCHEVSPIN37.SYMC.SYMANTEC.COM ([155.64.220.154]) by
+ TUS1XCHHUBPIN01.SYMC.SYMANTEC.COM ([155.64.220.137]) with mapi; Thu, 1 Oct
+ 2015 13:22:13 -0700
+From: Monica Wang <Monica_Wang@symantec.com>
+To: "letswikit@gmail.com" <letswikit@gmail.com>
+Date: Thu, 1 Oct 2015 13:23:36 -0700
+Subject: Fwd: Question about xxx
+Thread-Topic: Question about xxx
+Thread-Index: AdD8hts7ta+/sseJSpekAxkAansF5A==
+Message-ID: <39CE1B64-DA29-4C47-A91E-2C6774BA3CC3@symantec.com>
+References: <CAHUfr2cVfb_JNHem86b65NhPh2805W2NMFUK-rScjsPtgtwJvw@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+acceptlanguage: en-US
+Content-Type: multipart/alternative;
+ boundary="_000_39CE1B64DA294C47A91E2C6774BA3CC3symanteccom_"
+MIME-Version: 1.0
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprIIsWRmVeSWpSXmKPExsXCZeB6Utd3Gm+YQftUcYsp73ewODB67Jx1
+ lz2AMYrLJiU1J7MstUjfLoEr48DJi8wFT8QrLqxfxdzA2CDexcjJISFgIjHp5QQWCFtM4sK9
+ 9WxdjFwcQgKvGCX+tN9ghXCamSQan39gh3BWMkrM7pjFCNLCJqAjceHzB7B2EQF9ielPWphA
+ bBYBFYmbs2cDjeLgEBZQkGj4DVWiIHH/XzsbhK0nMef8f3YQm1fAXmLektdgI4UEAiT2bzkL
+ ZjMCXfT91BqwkcwC4hK3nsxngrhUQGLJnvPMELaoxMvH/1gh6kUl7rSvZ4SoT5bYumMdK8R8
+ QYmTM5+wTGAUmYVk1CwkZbOQlM0CuppZQFNi/S59iBJFiSndD9khbA2J1jlz2ZHFFzCyr2KU
+ SU3OMcwtScwvLSlIrTAw0iuuzE0ERlOyXnJ+7iZGYEQtS2K8tIPx/mHdQ4wCHIxKPLwz+3jD
+ hFgTy4AqDzFKcDArifBe6AEK8aYkVlalFuXHF5XmpBYfYpTmYFES592T/SpUSCA9sSQ1OzW1
+ ILUIJsvEwSnVwBho0lPXtWjtMybHpyq/FEX8XNNm3nD44VsYnn6jzHvi9ba7v9WPXKr7uER6
+ XdaC7ztdA73y1Q9t8Q0/8sz/jwyP9up/N9LZzz50FmByXqUyaeHK6Baz5ZP/XwldMnVjYhFj
+ YPkKs51F29+4XM9earbO4dZTlVwv3nXz+cwq9a4l7TmpqWMQ/EyJpTgj0VCLuag4EQA/xhzA
+ pAIAAA==

@@ -1,0 +1,75 @@
+
+
+Begin forwarded message:
+
+From: Suparn Gupta <Suparn_Gupta@symantec.com<mailto:Suparn_Gupta@symantec.com>>
+Date: September 29, 2015 at 11:28:01 PM PDT
+To: Deepak Radhakrishnan <Deepak_Radhakrishnan@symantec.com<mailto:Deepak_Radhakrishnan@symantec.com>>
+Cc: "Varsha Keswani (CS)" <Varsha_Keswani@symantec.com<mailto:Varsha_Keswani@symantec.com>>, Dan Walkowski <Dan_Walkowski@symantec.com<mailto:Dan_Walkowski@symantec.com>>, Abhilash Nair <Abhilash_Nair@symantec.com<mailto:Abhilash_Nair@symantec.com>>
+Subject: Re: Changes to the iOS Threat Protection
+
+Varsha,
+
+Few more updates.
+
+I have added a debug scheme which builds the ipa with the connect token. The connect token is read from a file named connect_token.txt. This scheme has a different target than the one built using Makefile. So there will be no collisions between the two targets. The one built from make file DOES NOT add the SymcToken/token to the IPA. Therefore, do not use the Debug scheme while designing the enrollment flows.
+
+I have also layered the code to reduce the redundancy esp. for networking calls. All the lower level networking is in BaseAPI. The controllers use a subclass of BaseAPI to make network calls, for example DeviceAPI. The layers are like this
+
+Views
+View Controllers
+Services -> BaseAPI
+OS
+
+All the code above services must use various Object Models as given in the Models group, e.g. Device.swift. Each model implements a toJSON() method which is supposed to convert the model into the appropriate JSON. Any JSON conversion happens at the service layer. Therefore, the view controllers won't see any raw JSON dicts or SwiftyJSON objects.
+
+All the errors are wrapped as TPError instances. Please see the APIError to get an idea of how to define the custom errors.
+
+This might be confusing at first. Please look at the enrollment flow for a device to understand an end to end flow. It starts from AppDelegate.
+
+Happy Hacking
+Suparn
+
+Sent from my iPhone
+
+On Sep 28, 2015, at 8:09 PM, Deepak Radhakrishnan <Deepak_Radhakrishnan@symantec.com<mailto:Deepak_Radhakrishnan@symantec.com>> wrote:
+
+Thanks for the update Suparn.
++ Saurabh & Sunil.
+
+I'd like to know if we also have unit test in place for iOS TP App. If not, I'd like to have one in place. This will help in future as we add more and more features.
+
+Regards,
+Deepak
+
+Sent from my iPhone
+
+On Sep 29, 2015, at 7:02 AM, Suparn Gupta <Suparn_Gupta@symantec.com<mailto:Suparn_Gupta@symantec.com>> wrote:
+
+Hi Varsha,
+
+I just wanted to give you a heads up that the Cocoapods have been replaced with Carthage in the iOS-ThreatProtection app. What this means to the developers?
+
+1. All the dependencies are now managed with Carthage
+2. There is just one iOS-ThreatProtection.xcodeproj now instead of the xcworkspace.
+3. The build scripts are now way cleaner and shorter than the cocoa pods.
+4. The debugging symbols no longer need to be included the final build unlike the cocoa pods
+
+What you need to do in order to set this up?
+
+1. You ll need to install Carthage. The easiest way is via home-brew (brew install carthage).
+2. Make sure that the Carthage version is none other than 0.8 (carthage version)
+3. Once installed, in your terminal, go to the iOS-ThreatProtection directory and you should see Cartfile and Cartfile.resolve
+4. Run “carthage update” to install all the dependencies.
+
+This should set up the required dependencies and also set up debugging symbol files.
+
+As a last step, create a directory structure  SymcToken/455163401428012166752122692696468139201509 inside the iOS-ThreatProtection directory (on the same level as Cartfile and ios-ThreatProtection.xcodeproject). The big number that you see here is the connect token.
+
+I am in the middle of simplifying this last step as a part of a debug project scheme. I will have it by tomorrow. In the meantime, just create the directory like this. See the attached screenshot, this is how the project structure should look like once you have followed the above steps.
+
+Deepak, I have updated the makefile as well, so there isn’t anything that needs to be taken care of regarding this change.
+
+Thanks
+Suparn
+<Screen Shot 2015-09-28 at 6.32.18 PM.png>

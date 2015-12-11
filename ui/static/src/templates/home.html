@@ -1,0 +1,87 @@
+<!-- Hero Section -->
+<div id="hero" class="hero-image" style="position: relative; z-index: 0; background: none;">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Create a Knowledge Base with Ease</h1>
+
+                <p class="subtitle">Forward any email conversation to letswikit@gmail.com to create a wiki
+                    article</p>
+            </div>
+        </div>
+
+        <div class="row" ng-controller="Search">
+            <div class="hero-box col-sm-8 col-sm-offset-2">
+                <div role="search" method="get" id="searchform" class="form-search" action="#">
+                    <div class="input-group">
+                        <input ng-model="query.value" type="text" id="autocomplete-dynamic"
+                               typeahead="topic._source.topic for topic in topics"
+                               typeahead-loading="loadingTopics" typeahead-no-results="noResults"
+                               name="s" class="form-control input-lg" typeahead-on-select="itemSelected($item, $model, $label)"
+                               autocomplete="off" placeholder="Find help! Enter search term here.">
+                <span class="input-group-btn">
+                  <input type="submit" id="searchsubmit" value="Search" class="btn">
+                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="backstretch"
+         style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 595px; width: 100%; z-index: -999998; position: absolute;">
+        <img src="static/dist/img/hero.jpg"
+             style="position: absolute; margin: 0px; padding: 0px; border: none;  width: 100%; z-index: -999999; left: 0px; top: -83.86px;">
+    </div>
+</div>
+<!-- /#hero -->
+
+<!-- Boxes Section -->
+<div class="container">
+    <div id="boxes">
+        <div class="home-title">
+            <h2>The most advanced wiki ever</h2>
+
+            <p>Here are some shortcuts</p></div>
+        <div class="row">
+            <div class="col-sm-4">
+                <article class="box box-left">
+                    <div class="circle">
+                        <a href="knowledgebase.html"><span></span><i class="fa fa-file-text-o"></i></a>
+                    </div>
+                    <h3><a href="knowledgebase.html">Knowledge Base</a></h3>
+
+                    <p>A complete directory for all the articles created.</p>
+                    <a class="btn" href="knowledgebase.html">Continue</a>
+                </article>
+            </div>
+            <div class="col-sm-4">
+                <article class="box box-middle">
+                    <div class="circle">
+                        <a href="faq-accordion.html"><span></span><i class="fa fa-question-circle"></i></a>
+                    </div>
+                    <h3><a href="faq-accordion.html">FAQ</a></h3>
+
+                    <p>The simplest things can be confusing. Find answers to common questions here.</p>
+                    <a class="btn" href="faq-accordion.html">Continue</a>
+                </article>
+            </div>
+            <div class="col-sm-4">
+                <article class="box box-right">
+                    <div class="circle">
+                        <a href="contact.html"><span></span><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                    <h3><a href="contact.html">Contact</a></h3>
+
+                    <p>Shoot us an email if something is not working. </p>
+                    <a class="btn" href="contact.html">Continue</a>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="autocomplete-suggestions"
+     style="position: absolute; display: none; width: 584px; top: 473px; left: 306px; max-height: 300px; z-index: 9999;"></div>

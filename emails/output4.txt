@@ -1,0 +1,107 @@
+From nobody Thu Oct  1 14:31:26 2015
+Delivered-To: letswikit@gmail.com
+Received: by 10.202.50.67 with SMTP id y64csp693106oiy;
+ Thu, 1 Oct 2015 13:23:59 -0700 (PDT)
+X-Received: by 10.66.147.74 with SMTP id ti10mr14763639pab.88.1443731039316;
+ Thu, 01 Oct 2015 13:23:59 -0700 (PDT)
+Return-Path: <Monica_Wang@symantec.com>
+Received: from ecl1mtaoutpex02.symantec.com (ecl1mtaoutpex02.symantec.com.
+ [166.98.1.210])
+ by mx.google.com with ESMTPS id aj8si11192027pad.206.2015.10.01.13.23.59
+ for <letswikit@gmail.com> (version=TLS1 cipher=RC4-SHA bits=128/128);
+ Thu, 01 Oct 2015 13:23:59 -0700 (PDT)
+Received-SPF: pass (google.com: domain of Monica_Wang@symantec.com designates
+ 166.98.1.210 as permitted sender) client-ip=166.98.1.210; 
+Authentication-Results: mx.google.com;
+ spf=pass (google.com: domain of Monica_Wang@symantec.com designates
+ 166.98.1.210 as permitted sender) smtp.mailfrom=Monica_Wang@symantec.com; 
+ dmarc=pass (p=NONE dis=NONE) header.from=symantec.com
+X-AuditID: a66201d2-f79ce6d000002ca4-aa-560d964dc7e3
+Received: from ecl1mtahubpin01.ges.symantec.com (uscu-zone.relay.symantec.com
+ [10.48.69.201])
+ by ecl1mtaoutpex02.symantec.com (Symantec Brightmail Gateway out) with SMTP id
+ 2D.4D.11428.D469D065; Thu,  1 Oct 2015 20:23:41 +0000 (GMT)
+Received: from [155.64.220.137] (helo=TUS1XCHHUBPIN01.SYMC.SYMANTEC.COM)
+ by ecl1mtahubpin01.ges.symantec.com with esmtp (Exim 4.76)
+ (envelope-from <Monica_Wang@symantec.com>) id 1ZhkOC-0001Lz-Np
+ for letswikit@gmail.com; Thu, 01 Oct 2015 20:23:40 +0000
+Received: from TUS1XCHEVSPIN37.SYMC.SYMANTEC.COM ([155.64.220.154]) by
+ TUS1XCHHUBPIN01.SYMC.SYMANTEC.COM ([155.64.220.137]) with mapi; Thu, 1 Oct
+ 2015 13:22:13 -0700
+From: Monica Wang <Monica_Wang@symantec.com>
+To: "letswikit@gmail.com" <letswikit@gmail.com>
+Date: Thu, 1 Oct 2015 13:23:36 -0700
+Subject: Fwd: Question about xxx
+Thread-Topic: Question about xxx
+Thread-Index: AdD8hts7ta+/sseJSpekAxkAansF5A==
+Message-ID: <39CE1B64-DA29-4C47-A91E-2C6774BA3CC3@symantec.com>
+References: <CAHUfr2cVfb_JNHem86b65NhPh2805W2NMFUK-rScjsPtgtwJvw@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+acceptlanguage: en-US
+Content-Type: multipart/alternative;
+ boundary="_000_39CE1B64DA294C47A91E2C6774BA3CC3symanteccom_"
+MIME-Version: 1.0
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprIIsWRmVeSWpSXmKPExsXCZeB6Utd3Gm+YQftUcYsp73ewODB67Jx1
+ lz2AMYrLJiU1J7MstUjfLoEr48DJi8wFT8QrLqxfxdzA2CDexcjJISFgIjHp5QQWCFtM4sK9
+ 9WxdjFwcQgKvGCX+tN9ghXCamSQan39gh3BWMkrM7pjFCNLCJqAjceHzB7B2EQF9ielPWphA
+ bBYBFYmbs2cDjeLgEBZQkGj4DVWiIHH/XzsbhK0nMef8f3YQm1fAXmLektdgI4UEAiT2bzkL
+ ZjMCXfT91BqwkcwC4hK3nsxngrhUQGLJnvPMELaoxMvH/1gh6kUl7rSvZ4SoT5bYumMdK8R8
+ QYmTM5+wTGAUmYVk1CwkZbOQlM0CuppZQFNi/S59iBJFiSndD9khbA2J1jlz2ZHFFzCyr2KU
+ SU3OMcwtScwvLSlIrTAw0iuuzE0ERlOyXnJ+7iZGYEQtS2K8tIPx/mHdQ4wCHIxKPLwz+3jD
+ hFgTy4AqDzFKcDArifBe6AEK8aYkVlalFuXHF5XmpBYfYpTmYFES592T/SpUSCA9sSQ1OzW1
+ ILUIJsvEwSnVwBho0lPXtWjtMybHpyq/FEX8XNNm3nD44VsYnn6jzHvi9ba7v9WPXKr7uER6
+ XdaC7ztdA73y1Q9t8Q0/8sz/jwyP9up/N9LZzz50FmByXqUyaeHK6Baz5ZP/XwldMnVjYhFj
+ YPkKs51F29+4XM9earbO4dZTlVwv3nXz+cwq9a4l7TmpqWMQ/EyJpTgj0VCLuag4EQA/xhzA
+ pAIAAA==
+
+--_000_39CE1B64DA294C47A91E2C6774BA3CC3symanteccom_
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+
+DQoNClNlbnQgZnJvbSBteSBpUGhvbmUNCg0KQmVnaW4gZm9yd2FyZGVkIG1lc3NhZ2U6DQoNCkZy
+b206IE1vbmljYSBXYW5nIDxxaXJvbmdpc21vbmljYUBnbWFpbC5jb208bWFpbHRvOnFpcm9uZ2lz
+bW9uaWNhQGdtYWlsLmNvbT4+DQpEYXRlOiBPY3RvYmVyIDEsIDIwMTUgYXQgMToyMTo0OCBQTSBQ
+RFQNClRvOiBNb25pY2EgV2FuZyA8TW9uaWNhX1dhbmdAc3ltYW50ZWMuY29tPG1haWx0bzpNb25p
+Y2FfV2FuZ0BzeW1hbnRlYy5jb20+Pg0KU3ViamVjdDogUmU6IFF1ZXN0aW9uIGFib3V0IHh4eA0K
+DQpJdCdzIGVhc3kuIEp1c3QgWVlZDQoNCk9uIFRodXJzZGF5LCBPY3RvYmVyIDEsIDIwMTUsIE1v
+bmljYSBXYW5nIDxNb25pY2FfV2FuZ0BzeW1hbnRlYy5jb208bWFpbHRvOk1vbmljYV9XYW5nQHN5
+bWFudGVjLmNvbT4+IHdyb3RlOg0KSGkgaG93IHRvIHh4eD8NCg0KU2VudCBmcm9tIG15IGlQaG9u
+ZQ0KDQoNCi0tDQpCZXN0IFJlZ2FyZHMsDQpRaXJvbmcsIFdBTkcgKE1vbmljYSkNCg0KRUVDUywg
+VW5pdmVyc2l0eSBvZiBDYWxpZm9ybmlhLCBMb3MgQW5nZWxlcywNClNjaG9vbCBvZiBNaWNyb2Vs
+ZWN0cm9uaWNzLCBGdWRhbiBVbml2ZXJzaXR5DQoNCkxpbmtlZC1pbu+8mmh0dHA6Ly93d3cubGlu
+a2VkaW4uY29tL2luL3Fpcm9uZ3dhbmcNCg0K
+
+--_000_39CE1B64DA294C47A91E2C6774BA3CC3symanteccom_
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGhlYWQ+PG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0
+L2h0bWw7IGNoYXJzZXQ9dXRmLTgiPjwvaGVhZD48Ym9keSBkaXI9ImF1dG8iPjxkaXY+PGJyPjxi
+cj5TZW50IGZyb20gbXkgaVBob25lPC9kaXY+PGRpdj48YnI+QmVnaW4gZm9yd2FyZGVkIG1lc3Nh
+Z2U6PGJyPjxicj48L2Rpdj48YmxvY2txdW90ZSB0eXBlPSJjaXRlIj48ZGl2PjxiPkZyb206PC9i
+PiBNb25pY2EgV2FuZyAmbHQ7PGEgaHJlZj0ibWFpbHRvOnFpcm9uZ2lzbW9uaWNhQGdtYWlsLmNv
+bSI+cWlyb25naXNtb25pY2FAZ21haWwuY29tPC9hPiZndDs8YnI+PGI+RGF0ZTo8L2I+IE9jdG9i
+ZXIgMSwgMjAxNSBhdCAxOjIxOjQ4IFBNIFBEVDxicj48Yj5Ubzo8L2I+IE1vbmljYSBXYW5nICZs
+dDs8YSBocmVmPSJtYWlsdG86TW9uaWNhX1dhbmdAc3ltYW50ZWMuY29tIj5Nb25pY2FfV2FuZ0Bz
+eW1hbnRlYy5jb208L2E+Jmd0Ozxicj48Yj5TdWJqZWN0OjwvYj4gPGI+UmU6IFF1ZXN0aW9uIGFi
+b3V0IHh4eDwvYj48YnI+PGJyPjwvZGl2PjwvYmxvY2txdW90ZT48YmxvY2txdW90ZSB0eXBlPSJj
+aXRlIj48ZGl2Pkl0J3MgZWFzeS4gSnVzdCBZWVk8c3Bhbj48L3NwYW4+PGJyPjxicj5PbiBUaHVy
+c2RheSwgT2N0b2JlciAxLCAyMDE1LCBNb25pY2EgV2FuZyAmbHQ7PGEgaHJlZj0ibWFpbHRvOk1v
+bmljYV9XYW5nQHN5bWFudGVjLmNvbSI+TW9uaWNhX1dhbmdAc3ltYW50ZWMuY29tPC9hPiZndDsg
+d3JvdGU6PGJyPjxibG9ja3F1b3RlIGNsYXNzPSJnbWFpbF9xdW90ZSIgc3R5bGU9Im1hcmdpbjow
+IDAgMCAuOGV4O2JvcmRlci1sZWZ0OjFweCAjY2NjIHNvbGlkO3BhZGRpbmctbGVmdDoxZXgiPkhp
+IGhvdyB0byB4eHg/PGJyPg0KPGJyPg0KU2VudCBmcm9tIG15IGlQaG9uZTxicj4NCjwvYmxvY2tx
+dW90ZT48YnI+PGJyPi0tIDxicj48ZGl2IGRpcj0ibHRyIj48ZGl2PkJlc3QgUmVnYXJkcyw8L2Rp
+dj4NCjxkaXY+UWlyb25nLCBXQU5HIChNb25pY2EpJm5ic3A7PC9kaXY+PGRpdj48YnI+PC9kaXY+
+PGRpdj5FRUNTLCBVbml2ZXJzaXR5IG9mIENhbGlmb3JuaWEsIExvcyBBbmdlbGVzLDwvZGl2Pg0K
+PGRpdj5TY2hvb2wgb2YgTWljcm9lbGVjdHJvbmljcywgRnVkYW4gVW5pdmVyc2l0eTwvZGl2Pg0K
+PGRpdj4mbmJzcDs8L2Rpdj4NCjxkaXY+TGlua2VkLWlu77yaPGEgaHJlZj0iaHR0cDovL3d3dy5s
+aW5rZWRpbi5jb20vaW4vcWlyb25nd2FuZyIgdGFyZ2V0PSJfYmxhbmsiPmh0dHA6Ly93d3cubGlu
+a2VkaW4uY29tL2luL3Fpcm9uZ3dhbmc8L2E+PC9kaXY+PC9kaXY+PGJyPg0KPC9kaXY+PC9ibG9j
+a3F1b3RlPjwvYm9keT48L2h0bWw+
+
+--_000_39CE1B64DA294C47A91E2C6774BA3CC3symanteccom_--
+

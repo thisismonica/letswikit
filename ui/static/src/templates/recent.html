@@ -1,0 +1,78 @@
+<div class="article">
+
+    <!-- Navbar -->
+    <!-- Paga title -->
+    <div class="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-lg-8">
+                    <h1>Knowledge Base</h1>
+
+                    <p class="tagline">Find answers and help fast</p>
+                </div>
+                <div class="col-sm-4 col-lg-4">
+                    <form role="search" method="get" id="searchform" class="form-search" action="#">
+                        <div class="append-icon">
+                            <input type="text" value="" name="s" id="autocomplete-dynamic" class="form-control input-lg"
+                                   autocomplete="off" placeholder="Enter search term here.">
+                            <span><i class="icon-search"></i></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="wrap container" role="document">
+        <div class="content row">
+            <div class="main col-sm-9" role="main">
+
+                <div class="post hentry" ng-repeat="article in topics">
+                    <header>
+                        <a href="" ng-click="goToTopic(article)"><h4 class="entry-title">{{article._source.topic | trim:50}}</h4></a>
+                    </header>
+                    <div class="entry-content">
+                        <p>{{article._source.question.content | trim:200}}</p>
+                    </div>
+                    <footer class="post">
+                        <time class="updated">{{article.time}}
+                        </time>
+                        <p class="byline author vcard">By <a href="#" rel="author" class="fn">{{article._source.question.sender_name}}</a></p>
+                    </footer>
+                    <hr/>
+                    <!-- /.author-box -->
+                </div>
+
+            </div>
+            <!-- /.main -->
+
+            <!-- Sidebar -->
+            <aside class="sidebar col-sm-3" role="complementary" ng-controller="Top">
+                <section class="widget">
+                    <div>
+                        <h3>Top Articles</h3>
+                        <ul>
+                            <li ng-repeat="topic in topics">
+                                <i class="fa fa-fw fa-file-text-o"></i>
+                                <a href="" ng-click="goToTopic2(topic)" rel="bookmark">{{topic._source.topic |
+                                    trim:24}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+            </aside>
+            <!-- /.sidebar -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.wrap -->
+
+
+
+
+
+    <div class="autocomplete-suggestions"
+         style="position: absolute; display: none; width: 360px; top: 141px; left: 1170px; max-height: 300px; z-index: 9999;"></div>
+</div>

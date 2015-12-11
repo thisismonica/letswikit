@@ -1,0 +1,230 @@
+Hey Scott,
+I’ve been spending some time today taking a look at an issue Monica is
+facing enrolling her windows 10 devices in a BH test environment.  It’s one
+of those deals where it’s not immediately clear to me why the device is not
+enrolling as we are delivering the enrollment xml (at least according to
+the logs).  I think it’s something that probably needs to be tested using
+another device but with my networking situation here in Pune I’m just not
+setup to do so myself.  Can you take a look if you get a chance?  Attached
+is her EnrollmentService log, the last entry represents the most recent
+enrollment attempt.
+I’ve already advised to make sure the time on the device is correct, as
+I’ve seen that be the cause of enrollment failures in the past.  If you can
+take a look I’d appreciate it. Sorry for the hassle.
+Thanks,
+Tim 2.442622781586219 0.1073558648111332 0.4949490966260651
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Math <module 'math' from '/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/lib-dynload/math.cpython-35m-darwin.so'>
+2015-09-11|05:48:41.848, DEBUG, localhost.localdomain, 4736, mono-service,
+BuildQueryString, Query String Param [x-epmp-ownership-type,CYOD]
+2015-09-11|05:48:41.848, DEBUG, localhost.localdomain, 4736, mono-service,
+BuildQueryString, Query String Param [WebMethod,EnrollRequest]
+2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,
+BuildQueryString, Query String Param [DeviceType,MS]
+2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,
+BuildQueryString, Query String Param [x-rest-verb,POST]
+2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,
+BuildQueryString, Query String Param [x-rest-uri,/epmp-admin/mdm]
+2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,
+BuildQueryString, Query String Param [x-rest-accept,application/json]
+2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,
+BuildQueryString, Query String Param
+[x-rest-querystring,WebMethod=EnrollRequest]
+2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,
+GetInfoFromConsumer, Placing Message into RabbitMQ, Queue Name =
+scsem.adminservices.mdm.exchange, Device Type = MS, Info Type =
+EnrollRequest
+2015-09-11|05:48:41.850, TRACE, localhost.localdomain, 4736, mono-service,
+Send, Created PublicationAddress with ExchangeType:direct,
+ExchangeName:scsem.adminservices.mdm.exchange and RoutingKey:
+2015-09-11|05:48:41.850, TRACE, localhost.localdomain, 4736, mono-service,
+Send, Sending message to scsem.adminservices.mdm.exchange (direct) with
+timeout 30000ms: {"UserName":"monica031@symantec.com
+","Password":"password","SecurityToken":null,"DeviceType":"WindowsPhone","DeviceId":"10010000A8D21341D1913A5672368B745708ED21","ApplicationVersion":"10.0.12666.0","ComparisonVersion":{"Build":12666,"Major":10,"Minor":0,"Revision":0,"MajorRevision":0,"MinorRevision":0},"RST_PKCS10":"MIIC2zCCAccCAQAwSzFJMEcGA1UEAxNAQjkyRTczMDUtOTQ2Mi00QjQ4IXVybjp1dWlkOjc4M0NFRUI2LUQ1OUYtNTYzNS05Q0Y2LTVGMUU3NDBDQUQ4MzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALklWqSLWSIaoA1m11PtpzYCc417CBII4WGl1HS/Ya9PGA4wKnqQL4zioHaoCsgmVOmyG5RngW/YEZqMSXiq5zJnH7dmITlWyjl7VtMBpP/ugITKfWFsQVQFAo+oxUlbSPHfEt0nocDs+18q6vX5mu37GDl4o/5UaQ0hxBI1ehEKEsRO9599FAXNkfAimAXna1Re6GpF5VG+qSxva+/KAt0VVW7vlnAtlmDF79ivjQoUd+XYg9X2T3sFdqRd+6XkIZHsV0EmpVPVuXkG1frrWatojN8aGLGG9ga1ULXKHRZLyHRMfYFCuePvk75UOvcYuZTHX1z+LBaxfDxK2+u8An0CAwEAAaBPME0GCSqGSIb3DQEJDjFAMD4wPAYKKwYBBAGCN0IBAAQudXJuOnV1aWQ6NzgzQ0VFQjYtRDU5Ri01NjM1LTlDRjYtNUYxRTc0MENBRDgzADAJBgUrDgMCHQUAA4IBAQBsNEm4k2R5CK14+AQhxHR4gqJmbaIT90kjEu3Bx431DY3KrlnMi8R8ktMpWaQeKKJuUGtUN0CuPZgsPjX2wuh30txQ+bIUJdYytSaop0Ry0LHiO4WohPz67kR2HeMV6RAOzBmShOGaHtIXhiJXbBQKut7dD/rZelrJ8bXmfR0bh0L5jNsBxURyc5GPoPZlG15td+/kMlt78CI4eCNR1cwTsq2F3zN3pl0xZXyTPOANUEVUZH2HsXIVb8h1f30qJjUwNFq5iCbOFxG3n1FG1Os1E7QPRIeDC/jtAxtexKu4wRDfvf4TSRBFuiH4509JN9t5wJCYjgRNi+uczToHu1cJ","Hostname":"
+me.nuk9.com","QueryParameters":["x-epmp-ownership-type=CYOD"],"InformationType":"EnrollmentInformation","Type":"Symantec.Mdm.Library.MS.MSServiceLibrary.Information.EnrollmentInformation","Message":null,"MessageCode":0}.
+Headers:
+{"x-rest-accept":"application/json,application/json","x-epmp-customer-id":"bh_svc","x-epmp-domain-id":"bh_svc","x-epmp-ownership-type":"CYOD","WebMethod":"EnrollRequest","DeviceType":"MS","x-rest-verb":"POST","x-rest-uri":"/epmp-admin/mdm","x-rest-querystring":"WebMethod=EnrollRequest","Authorization":"Bearer
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJpZF9lcG1wX2kiLCJzdWIiOiJ7XCJkb21haW5faWRcIjpcImJoX3N2Y1wiLFwic2NvcGVcIjpcInN5c3RlbVwiLFwicHJpdnNcIjpcIntcXFwidmVyXFxcIjoxLFxcXCJjcmVhdGVfZGV2aWNlc1xcXCI6dHJ1ZSxcXFwiY3JlYXRlX3N5c3RlbV90b2tlblxcXCI6dHJ1ZSxcXFwiZW5yb2xsX2RldmljZXNcXFwiOnRydWUsXFxcImdlbmVyYXRlX3JlcG9ydFxcXCI6dHJ1ZSxcXFwibWFuYWdlX2Fkc3luY19qb2JzXFxcIjp0cnVlLFxcXCJtYW5hZ2VfYWxlcnRfcnVsZVxcXCI6dHJ1ZSxcXFwibWFuYWdlX2RldmljZXNcXFwiOnRydWUsXFxcIm1hbmFnZV9kb21haW5cXFwiOnRydWUsXFxcIm1hbmFnZV9saWNlbnNlc1xcXCI6dHJ1ZSxcXFwibWFuYWdlX29yZ2FuaXphdGlvblxcXCI6dHJ1ZSxcXFwibWFuYWdlX3BvbGljeVxcXCI6dHJ1ZSxcXFwibWFuYWdlX3VzZXJzXFxcIjp0cnVlLFxcXCJwcm92aXNpb25fY3VzdG9tZXJcXFwiOnRydWUsXFxcInJlYWRfYWxsX29yZ2FuaXphdGlvbnNcXFwiOnRydWUsXFxcInJlYWRfb3JnYW5pemF0aW9uXFxcIjp0cnVlLFxcXCJyZWFkX2FwbnNfY2VydFxcXCI6dHJ1ZSxcXFwicmVhZF9wYW5lbFxcXCI6dHJ1ZSxcXFwicmVhZF9yZXBvcnRcXFwiOnRydWUsXFxcInNjYW5fYWxsX3VzZXJzXFxcIjp0cnVlLFxcXCJzZW5kX3VzZXJfbWVzc2FnZVxcXCI6dHJ1ZSxcXFwidmlld19wYW5lbFxcXCI6dHJ1ZSxcXFwid3JpdGVfdXNlcnNcXFwiOltcXFwib3JnX3VuaXRzLnFreVhaUXdiVEl1ZVJ6dHM5SXBXdkFcXFwiLFxcXCJ1c2Vycy51c3hUVFRhYlJWS3FvaWxfaEVQY0VRXFxcIl19XCIsXCJjdXN0b21lcl9pZFwiOlwiYmhfc3ZjXCIsXCJ1cmlcIjpcIlwvdjFcL21kclwvdXNlcnNcL3VzeFRUVGFiUlZLcW9pbF9oRVBjRVFcIn0iLCJ2ZXIiOjEsImV4cCI6MTQ0MjAzNjkwNCwiaWF0IjoxNDQxOTUwNTA0LCJqdGkiOiJ3XzFPVERuZFNLLWxQQ0RxR0VHWkVBIn0.3cFzyj-quMN9duOk7qKrCPfOfDl63Al1MUIteLZy4JM","message-type":"Symantec.Mdm.Library.MS.MSServiceLibrary.Information.EnrollmentInformation"}
+2015-09-11|05:48:41.850, DEBUG, localhost.localdomain, 4736, mono-service,
+Call, Adding Request to Request Map with Correlation Id
+87cd1a88-bc55-4aac-828a-4c3effb304dd, Reply to Queue
+scsem.adminservices.mdm.exchangee9b36121-1194-44a7-ac1a-50366de177c3
+2015-09-11|05:48:41.851, TRACE, localhost.localdomain, 4736, mono-service,
+Call, Correlation Id 87cd1a88-bc55-4aac-828a-4c3effb304dd Request Body -
+{"UserName":"monica031@symantec.com
+","Password":"password","SecurityToken":null,"DeviceType":"WindowsPhone","DeviceId":"10010000A8D21341D1913A5672368B745708ED21","ApplicationVersion":"10.0.12666.0","ComparisonVersion":{"Build":12666,"Major":10,"Minor":0,"Revision":0,"MajorRevision":0,"MinorRevision":0},"RST_PKCS10":"MIIC2zCCAccCAQAwSzFJMEcGA1UEAxNAQjkyRTczMDUtOTQ2Mi00QjQ4IXVybjp1dWlkOjc4M0NFRUI2LUQ1OUYtNTYzNS05Q0Y2LTVGMUU3NDBDQUQ4MzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALklWqSLWSIaoA1m11PtpzYCc417CBII4WGl1HS/Ya9PGA4wKnqQL4zioHaoCsgmVOmyG5RngW/YEZqMSXiq5zJnH7dmITlWyjl7VtMBpP/ugITKfWFsQVQFAo+oxUlbSPHfEt0nocDs+18q6vX5mu37GDl4o/5UaQ0hxBI1ehEKEsRO9599FAXNkfAimAXna1Re6GpF5VG+qSxva+/KAt0VVW7vlnAtlmDF79ivjQoUd+XYg9X2T3sFdqRd+6XkIZHsV0EmpVPVuXkG1frrWatojN8aGLGG9ga1ULXKHRZLyHRMfYFCuePvk75UOvcYuZTHX1z+LBaxfDxK2+u8An0CAwEAAaBPME0GCSqGSIb3DQEJDjFAMD4wPAYKKwYBBAGCN0IBAAQudXJuOnV1aWQ6NzgzQ0VFQjYtRDU5Ri01NjM1LTlDRjYtNUYxRTc0MENBRDgzADAJBgUrDgMCHQUAA4IBAQBsNEm4k2R5CK14+AQhxHR4gqJmbaIT90kjEu3Bx431DY3KrlnMi8R8ktMpWaQeKKJuUGtUN0CuPZgsPjX2wuh30txQ+bIUJdYytSaop0Ry0LHiO4WohPz67kR2HeMV6RAOzBmShOGaHtIXhiJXbBQKut7dD/rZelrJ8bXmfR0bh0L5jNsBxURyc5GPoPZlG15td+/kMlt78CI4eCNR1cwTsq2F3zN3pl0xZXyTPOANUEVUZH2HsXIVb8h1f30qJjUwNFq5iCbOFxG3n1FG1Os1E7QPRIeDC/jtAxtexKu4wRDfvf4TSRBFuiH4509JN9t5wJCYjgRNi+uczToHu1cJ","Hostname":"
+me.nuk9.com
+","QueryParameters":["x-epmp-ownership-type=CYOD"],"InformationType":"EnrollmentInformation","Type":"Symantec.Mdm.Library.MS.MSServiceLibrary.Information.EnrollmentInformation","Message":null,"MessageCode":0}
+2015-09-11|05:48:41.851, DEBUG, localhost.localdomain, 4736, mono-service,
+Call, Sending the Request to RabbitMQ - scsem.adminservices.mdm.exchange
+2015-09-11|05:48:41.851, DEBUG, localhost.localdomain, 4736, mono-service,
+Call, Wait on the Response for CorreleationId =
+87cd1a88-bc55-4aac-828a-4c3effb304dd, TimeoutMilliseconds = 30000
+2015-09-11|05:48:41.905, DEBUG, localhost.localdomain, 4736, mono-service,
+MonitorReplyQueue, Subscription has a reply for CorreleationId
+87cd1a88-bc55-4aac-828a-4c3effb304dd.  Getting request from Reqest Map
+2015-09-11|05:48:41.905, DEBUG, localhost.localdomain, 4736, mono-service,
+MonitorReplyQueue, Found a request in the request map for CorreleationId
+87cd1a88-bc55-4aac-828a-4c3effb304dd.
+2015-09-11|05:48:41.905, DEBUG, localhost.localdomain, 4736, mono-service,
+MonitorReplyQueue, Sending Subscription Ack for RabbitMQ for CorreleationId
+87cd1a88-bc55-4aac-828a-4c3effb304dd.
+2015-09-11|05:48:41.906, DEBUG, localhost.localdomain, 4736, mono-service,
+MonitorReplyQueue, Setting Autoreset Event for CorreleationId
+87cd1a88-bc55-4aac-828a-4c3effb304dd.
+2015-09-11|05:48:41.906, DEBUG, localhost.localdomain, 4736, mono-service,
+Call, Removing Entry from Request Map CorreleationId =
+87cd1a88-bc55-4aac-828a-4c3effb304dd
+2015-09-11|05:48:41.906, TRACE, localhost.localdomain, 4736, mono-service,
+SendMessage, Received reply with correlation Id
+87cd1a88-bc55-4aac-828a-4c3effb304dd on reply-to queue:
+{"status":500,"code":500,"message":"Unable to
+authenticate","more_info_url":"
+http://www.symantec.com/business/support/index?page=home"}
+2015-09-11|05:48:42.825, TRACE, localhost.localdomain, 4736, mono-service,
+ProcessResults, Processing WorkItem [DeliveryTag: 42 Result: Ack]
+Doesn’t the highlighted message explain it?  We’re sending the enrollment
+request to the solution and it’s having some error (sending a 500) so it’s
+not completing.
+—Scott 2.637237918020335 0.2524850894632207 1.1919709536947816
+++++++++++++++++++++++++++++++++
++ Feliks, in BH Enrollment team
+Thanks, Scott
+That error is actually because one of BH service is not switched on. I just
+tried again with everything running.  I cropped the EnrollmentService.log
+with only information on my last enrollment.  The only Error I’m getting is
+2015-09-11|17:24:41.409, ERROR, localhost.localdomain, 27281, mono-service,
+FixQueryStrings, Unable to Fix Url Query String Key.  Skipping key.
+System.Arg
+   6 Parameter name: key
+After that, I can see log saying about device certificate creation
+1023 2015-09-11|17:34:18.554, TRACE, localhost.localdomain, 27281,
+mono-service, BaseDeviceCreation, user cert value:
+MIICkDCCAfmgAwIBAgIDAPURMA0GCSqGSIb3DQEBC
+and sending out XML payload.
+2015-09-11|17:34:18.580, TRACE, localhost.localdomain, 27281, mono-service,
+HandleEnrollmentRequest, Response XML Payload
+I already changed server’s system time, and confirmed it’s the same by
+command “date”. However, I do notice that the log time is not changed
+correspondingly. Not sure if this is causing the issue.
+The device clearly is not calling back MDM check in URL afterwards. It
+shows “unable to enroll”. Please find the attached screenshot.
+Thank you!
+Monica 2.329575325054841 0.13518886679920478 0.6140271671346413
+++++++++++++++++++++++++++++++++
+Has this ever worked for you?  I.e. Have you already been through Windows
+Phone enrollment successfully returning a valid certificate to the device
+(that it accepts and uses)?
+>From what it looks like, you are now completing the certificate request and
+returning something that the core processes, but the device doesn’t like
+for some reason.  Key length, algorithm, etc.
+Can you send a sample request message (EnrollRequest) and your response?
+—Scott 2.130206273567068 0.05765407554671968 0.2544228940983415
+++++++++++++++++++++++++++++++++
+Thanks, Scott!
+I attached the EnrollRequest and EnrollInformation JSON file.
+Windows 10 enrollment never completed for me actually.  I did try the same
+phone on MobMan. It’s returning failure message on the phone as well.
+Please refer to the attached screenshot. 2.0267938098345875 0.03777335984095427 0.16397896825068534
+++++++++++++++++++++++++++++++++
+Looked at the certificate response you’re sending back.
+It’s a self-signed certificate, which isn’t going to fly.
+You need to complete the certificate against some issuer, then include the
+cert and issuer certs (intermediates to root) in your response.
+>From the MM response, it looks like you’re not getting past
+authentication.  Or maybe WP enrollment isn’t enabled?
+—Scott 2.2185458100633233 0.04572564612326044 0.20446416715038052
+++++++++++++++++++++++++++++++++
++ Mike Bracewell
+Hi Scott and Tim,
+As we don’t have a publicly accessible MPKI interface, I won’t be able to
+sign the CSR in the BH service. Mike points out that  it is MDMCore to call
+MPKI in the Windows 10 Enrollment flow (
+https://confluence.ges.symantec.com/pages/viewpage.action?pageId=61479042).
+Right now, the Windows Enrollment Service will reply a Windows
+EnrollRequest with device certificate/root certificate/intermediate
+certificate? Any idea how will I be able to pass the CSR handling to MDM
+Core?
+Thanks,
+Monica 2.0429233199311776 0.06560636182902585 0.2855558328477063
+++++++++++++++++++++++++++++++++
++Jim, Kyle
+We don’t support that currently.  Kyle/Jim would know more of when that
+work may be scheduled.
+—Scott 1.9273921261392744 0.015904572564612324 0.06788991191013664
+++++++++++++++++++++++++++++++++
++ Pi team
+According to Apple enrollment flow (
+https://confluence.ges.symantec.com/pages/viewpage.action?pageId=2076118 )
+MDM receives then signed CSR to pass to the device. (Phase 4, step 22). Can
+we have the same support for Windows 10? 1.7006107279221032 0.033797216699801194 0.13816238103460696
+++++++++++++++++++++++++++++++++
+With the Apple flow, the MDM server delivers a SCEP profile to the device,
+then the Profile installer/MDM on the device talks to the SCEP server to
+complete the certificate enrollment.  Those diagrams are not accurate.
+There is no case where an Apple device delivers a CSR to the MDM server and
+the MDM server completes the request.
+For Windows 8.1/10, the MDM server receives the WSTEP enrollment, extracts
+the CSR and forwards that to the solution to complete.  Then the MDM server
+returns the response to the WSTEP enrollment.  That’s the current
+implemented and supported flow.  There have been some discussions and
+beginning plans to do things differently.
+—Scott 2.120974399676249 0.073558648111332 0.3241476067387272
+++++++++++++++++++++++++++++++++
+How far along are the discussions about changing the MDM Core flow here for
+Win10 CSR signing?
+One option would be to have the SCEP service to expose a simplified signing
+interface that BH can call when it receives the WSTEP enrollment request.
+The interface could allow CSRs to be signed without the complexity of SCEP.
+I’ll check with the team maintaining the SCEP service to see how much work
+this would be to add.
+Let me know if you have other thoughts on how to do this.
+Regards,
+Chris 1.964831069441033 0.0636182902584493 0.27332538362830716
+++++++++++++++++++++++++++++++++
+Hello Chris,
+We had several conversations with the SCEP team about supporting a generic
+get certificate call but that interface was never implemented.  (We
+initially wanted it for Android certificates.)
+My understanding that this project no longer has an owner and ultimately we
+want to move to mPKI.  In fact that was the initial design until mPKI told
+us they couldn’t support our use case.  Thankfully they have had a change
+of heart but I wish it was a few months ago.
+Regards,
+Jim 2.29240129699367 0.06958250497017893 0.3144285684643006
+++++++++++++++++++++++++++++++++
+Thanks, Chirs,  Jim and Kyle!
+Seems that we have 2 options of Win10 CSR signing, mPKI and SCEP signing
+interface. Since mPKI is still in POC (MDMCOR-7725
+<https://projira.symclab.net/browse/MDMCOR-7725> ), and there’s no team
+working on the SCEP, I’m not sure how am I going to proceed this Win10
+enrollment story.
+Chris, any idea how we can temporarily bypass SCEP signing to continue
+enrollment? 1.9792661696063965 0.04970178926441352 0.21406032467255115
+++++++++++++++++++++++++++++++++
+Hello Monica,
+The reality is that at the moment you are blocked.  We are trying to figure
+out what can be accelerated to get you unblocked.
+Regards,
+Jim 2.4260151319598084 0.019880715705765408 0.09146156349900735
+++++++++++++++++++++++++++++++++
+The SCEP service is owned by Deepak’s team in Pune (under Todd).  We can
+get them to work on it or better yet take on the work ourselves.  We can
+consult with John Steenbruggen who was the original author of the service.
+I think mPKI support is a great option and we should continue down that
+path but for the immediate needs get the changes to the SCEP service done.
+I’ll start a conversation with the SCEP team to investigate the needed
+work.  In the meantime I think we can unblock enrollment by doing the
+signing within the enrollment service code as a temporary fix.
+Regards,
+Chris 2.28528529151818 0.07952286282306163 0.35899024852918143
+++++++++++++++++++++++++++++++++
+[2.4082697833375737, 1.2405864993396278, 0.5140385058436796, 0.3313047126835585, 0.4131014048599295, 0.5769398000607813, 0.1371654426140464, 0.2791446271473627, 0.6549109978144304, 0.5522292807310748, 0.635274557742757, 0.4324895754568355, 0.18478983823281267, 0.7253074123709315]
+{"sender_address": "Timothy_Maguire@symantec.com", "time": "Friday, September 11, 2015 at 6:26 AM", "subject": "", "date": "", "sender_name": "Timothy Maguire", "content": "Hey Scott,\nI\u2019ve been spending some time today taking a look at an issue Monica is\nfacing enrolling her windows 10 devices in a BH test environment.  It\u2019s one\nof those deals where it\u2019s not immediately clear to me why the device is not\nenrolling as we are delivering the enrollment xml (at least according to\nthe logs).  I think it\u2019s something that probably needs to be tested using\nanother device but with my networking situation here in Pune I\u2019m just not\nsetup to do so myself.  Can you take a look if you get a chance?  Attached\nis her EnrollmentService log, the last entry represents the most recent\nenrollment attempt.\nI\u2019ve already advised to make sure the time on the device is correct, as\nI\u2019ve seen that be the cause of enrollment failures in the past.  If you can\ntake a look I\u2019d appreciate it. Sorry for the hassle.\nThanks,\nTim", "keywords": ["something", "situation", "Thanks", "make", "hassle", "failures", "look", "most", "appreciate", "issue", "last", "devices", "delivering", "time", "test", "setup", "spending", "seen", "today", "environment", "been", "attempt", "correct", "device", "using", "entry", "represents", "windows", "taking", "tested", "past", "Sorry", "Attached", "sure", "networking", "chance", "facing", "enrollment", "logs", "EnrollmentService", "enrolling", "least", "take", "deals", "according", "advised", "cause", "Monica", "think", "Pune", "recent", "Scott", "needs", "clear"], "comments": [], "py/object": "mail_parser.Message"}
+{"sender_address": "Scott_Douglass@symantec.com", "time": "Friday, September 11, 2015 at 6:45 AM", "subject": "", "date": "", "sender_name": "Scott Douglass", "content": "2015-09-11|05:48:41.848, DEBUG, localhost.localdomain, 4736, mono-service,\nBuildQueryString, Query String Param [x-epmp-ownership-type,CYOD]\n2015-09-11|05:48:41.848, DEBUG, localhost.localdomain, 4736, mono-service,\nBuildQueryString, Query String Param [WebMethod,EnrollRequest]\n2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,\nBuildQueryString, Query String Param [DeviceType,MS]\n2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,\nBuildQueryString, Query String Param [x-rest-verb,POST]\n2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,\nBuildQueryString, Query String Param [x-rest-uri,/epmp-admin/mdm]\n2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,\nBuildQueryString, Query String Param [x-rest-accept,application/json]\n2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,\nBuildQueryString, Query String Param\n[x-rest-querystring,WebMethod=EnrollRequest]\n2015-09-11|05:48:41.849, DEBUG, localhost.localdomain, 4736, mono-service,\nGetInfoFromConsumer, Placing Message into RabbitMQ, Queue Name =\nscsem.adminservices.mdm.exchange, Device Type = MS, Info Type =\nEnrollRequest\n2015-09-11|05:48:41.850, TRACE, localhost.localdomain, 4736, mono-service,\nSend, Created PublicationAddress with ExchangeType:direct,\nExchangeName:scsem.adminservices.mdm.exchange and RoutingKey:\n2015-09-11|05:48:41.850, TRACE, localhost.localdomain, 4736, mono-service,\nSend, Sending message to scsem.adminservices.mdm.exchange (direct) with\ntimeout 30000ms: {\"UserName\":\"monica031@symantec.com\n\",\"Password\":\"password\",\"SecurityToken\":null,\"DeviceType\":\"WindowsPhone\",\"DeviceId\":\"10010000A8D21341D1913A5672368B745708ED21\",\"ApplicationVersion\":\"10.0.12666.0\",\"ComparisonVersion\":{\"Build\":12666,\"Major\":10,\"Minor\":0,\"Revision\":0,\"MajorRevision\":0,\"MinorRevision\":0},\"RST_PKCS10\":\"MIIC2zCCAccCAQAwSzFJMEcGA1UEAxNAQjkyRTczMDUtOTQ2Mi00QjQ4IXVybjp1dWlkOjc4M0NFRUI2LUQ1OUYtNTYzNS05Q0Y2LTVGMUU3NDBDQUQ4MzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALklWqSLWSIaoA1m11PtpzYCc417CBII4WGl1HS/Ya9PGA4wKnqQL4zioHaoCsgmVOmyG5RngW/YEZqMSXiq5zJnH7dmITlWyjl7VtMBpP/ugITKfWFsQVQFAo+oxUlbSPHfEt0nocDs+18q6vX5mu37GDl4o/5UaQ0hxBI1ehEKEsRO9599FAXNkfAimAXna1Re6GpF5VG+qSxva+/KAt0VVW7vlnAtlmDF79ivjQoUd+XYg9X2T3sFdqRd+6XkIZHsV0EmpVPVuXkG1frrWatojN8aGLGG9ga1ULXKHRZLyHRMfYFCuePvk75UOvcYuZTHX1z+LBaxfDxK2+u8An0CAwEAAaBPME0GCSqGSIb3DQEJDjFAMD4wPAYKKwYBBAGCN0IBAAQudXJuOnV1aWQ6NzgzQ0VFQjYtRDU5Ri01NjM1LTlDRjYtNUYxRTc0MENBRDgzADAJBgUrDgMCHQUAA4IBAQBsNEm4k2R5CK14+AQhxHR4gqJmbaIT90kjEu3Bx431DY3KrlnMi8R8ktMpWaQeKKJuUGtUN0CuPZgsPjX2wuh30txQ+bIUJdYytSaop0Ry0LHiO4WohPz67kR2HeMV6RAOzBmShOGaHtIXhiJXbBQKut7dD/rZelrJ8bXmfR0bh0L5jNsBxURyc5GPoPZlG15td+/kMlt78CI4eCNR1cwTsq2F3zN3pl0xZXyTPOANUEVUZH2HsXIVb8h1f30qJjUwNFq5iCbOFxG3n1FG1Os1E7QPRIeDC/jtAxtexKu4wRDfvf4TSRBFuiH4509JN9t5wJCYjgRNi+uczToHu1cJ\",\"Hostname\":\"\nme.nuk9.com\",\"QueryParameters\":[\"x-epmp-ownership-type=CYOD\"],\"InformationType\":\"EnrollmentInformation\",\"Type\":\"Symantec.Mdm.Library.MS.MSServiceLibrary.Information.EnrollmentInformation\",\"Message\":null,\"MessageCode\":0}.\nHeaders:\n{\"x-rest-accept\":\"application/json,application/json\",\"x-epmp-customer-id\":\"bh_svc\",\"x-epmp-domain-id\":\"bh_svc\",\"x-epmp-ownership-type\":\"CYOD\",\"WebMethod\":\"EnrollRequest\",\"DeviceType\":\"MS\",\"x-rest-verb\":\"POST\",\"x-rest-uri\":\"/epmp-admin/mdm\",\"x-rest-querystring\":\"WebMethod=EnrollRequest\",\"Authorization\":\"Bearer\neyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJpZF9lcG1wX2kiLCJzdWIiOiJ7XCJkb21haW5faWRcIjpcImJoX3N2Y1wiLFwic2NvcGVcIjpcInN5c3RlbVwiLFwicHJpdnNcIjpcIntcXFwidmVyXFxcIjoxLFxcXCJjcmVhdGVfZGV2aWNlc1xcXCI6dHJ1ZSxcXFwiY3JlYXRlX3N5c3RlbV90b2tlblxcXCI6dHJ1ZSxcXFwiZW5yb2xsX2RldmljZXNcXFwiOnRydWUsXFxcImdlbmVyYXRlX3JlcG9ydFxcXCI6dHJ1ZSxcXFwibWFuYWdlX2Fkc3luY19qb2JzXFxcIjp0cnVlLFxcXCJtYW5hZ2VfYWxlcnRfcnVsZVxcXCI6dHJ1ZSxcXFwibWFuYWdlX2RldmljZXNcXFwiOnRydWUsXFxcIm1hbmFnZV9kb21haW5cXFwiOnRydWUsXFxcIm1hbmFnZV9saWNlbnNlc1xcXCI6dHJ1ZSxcXFwibWFuYWdlX29yZ2FuaXphdGlvblxcXCI6dHJ1ZSxcXFwibWFuYWdlX3BvbGljeVxcXCI6dHJ1ZSxcXFwibWFuYWdlX3VzZXJzXFxcIjp0cnVlLFxcXCJwcm92aXNpb25fY3VzdG9tZXJcXFwiOnRydWUsXFxcInJlYWRfYWxsX29yZ2FuaXphdGlvbnNcXFwiOnRydWUsXFxcInJlYWRfb3JnYW5pemF0aW9uXFxcIjp0cnVlLFxcXCJyZWFkX2FwbnNfY2VydFxcXCI6dHJ1ZSxcXFwicmVhZF9wYW5lbFxcXCI6dHJ1ZSxcXFwicmVhZF9yZXBvcnRcXFwiOnRydWUsXFxcInNjYW5fYWxsX3VzZXJzXFxcIjp0cnVlLFxcXCJzZW5kX3VzZXJfbWVzc2FnZVxcXCI6dHJ1ZSxcXFwidmlld19wYW5lbFxcXCI6dHJ1ZSxcXFwid3JpdGVfdXNlcnNcXFwiOltcXFwib3JnX3VuaXRzLnFreVhaUXdiVEl1ZVJ6dHM5SXBXdkFcXFwiLFxcXCJ1c2Vycy51c3hUVFRhYlJWS3FvaWxfaEVQY0VRXFxcIl19XCIsXCJjdXN0b21lcl9pZFwiOlwiYmhfc3ZjXCIsXCJ1cmlcIjpcIlwvdjFcL21kclwvdXNlcnNcL3VzeFRUVGFiUlZLcW9pbF9oRVBjRVFcIn0iLCJ2ZXIiOjEsImV4cCI6MTQ0MjAzNjkwNCwiaWF0IjoxNDQxOTUwNTA0LCJqdGkiOiJ3XzFPVERuZFNLLWxQQ0RxR0VHWkVBIn0.3cFzyj-quMN9duOk7qKrCPfOfDl63Al1MUIteLZy4JM\",\"message-type\":\"Symantec.Mdm.Library.MS.MSServiceLibrary.Information.EnrollmentInformation\"}\n2015-09-11|05:48:41.850, DEBUG, localhost.localdomain, 4736, mono-service,\nCall, Adding Request to Request Map with Correlation Id\n87cd1a88-bc55-4aac-828a-4c3effb304dd, Reply to Queue\nscsem.adminservices.mdm.exchangee9b36121-1194-44a7-ac1a-50366de177c3\n2015-09-11|05:48:41.851, TRACE, localhost.localdomain, 4736, mono-service,\nCall, Correlation Id 87cd1a88-bc55-4aac-828a-4c3effb304dd Request Body -\n{\"UserName\":\"monica031@symantec.com\n\",\"Password\":\"password\",\"SecurityToken\":null,\"DeviceType\":\"WindowsPhone\",\"DeviceId\":\"10010000A8D21341D1913A5672368B745708ED21\",\"ApplicationVersion\":\"10.0.12666.0\",\"ComparisonVersion\":{\"Build\":12666,\"Major\":10,\"Minor\":0,\"Revision\":0,\"MajorRevision\":0,\"MinorRevision\":0},\"RST_PKCS10\":\"MIIC2zCCAccCAQAwSzFJMEcGA1UEAxNAQjkyRTczMDUtOTQ2Mi00QjQ4IXVybjp1dWlkOjc4M0NFRUI2LUQ1OUYtNTYzNS05Q0Y2LTVGMUU3NDBDQUQ4MzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALklWqSLWSIaoA1m11PtpzYCc417CBII4WGl1HS/Ya9PGA4wKnqQL4zioHaoCsgmVOmyG5RngW/YEZqMSXiq5zJnH7dmITlWyjl7VtMBpP/ugITKfWFsQVQFAo+oxUlbSPHfEt0nocDs+18q6vX5mu37GDl4o/5UaQ0hxBI1ehEKEsRO9599FAXNkfAimAXna1Re6GpF5VG+qSxva+/KAt0VVW7vlnAtlmDF79ivjQoUd+XYg9X2T3sFdqRd+6XkIZHsV0EmpVPVuXkG1frrWatojN8aGLGG9ga1ULXKHRZLyHRMfYFCuePvk75UOvcYuZTHX1z+LBaxfDxK2+u8An0CAwEAAaBPME0GCSqGSIb3DQEJDjFAMD4wPAYKKwYBBAGCN0IBAAQudXJuOnV1aWQ6NzgzQ0VFQjYtRDU5Ri01NjM1LTlDRjYtNUYxRTc0MENBRDgzADAJBgUrDgMCHQUAA4IBAQBsNEm4k2R5CK14+AQhxHR4gqJmbaIT90kjEu3Bx431DY3KrlnMi8R8ktMpWaQeKKJuUGtUN0CuPZgsPjX2wuh30txQ+bIUJdYytSaop0Ry0LHiO4WohPz67kR2HeMV6RAOzBmShOGaHtIXhiJXbBQKut7dD/rZelrJ8bXmfR0bh0L5jNsBxURyc5GPoPZlG15td+/kMlt78CI4eCNR1cwTsq2F3zN3pl0xZXyTPOANUEVUZH2HsXIVb8h1f30qJjUwNFq5iCbOFxG3n1FG1Os1E7QPRIeDC/jtAxtexKu4wRDfvf4TSRBFuiH4509JN9t5wJCYjgRNi+uczToHu1cJ\",\"Hostname\":\"\nme.nuk9.com\n\",\"QueryParameters\":[\"x-epmp-ownership-type=CYOD\"],\"InformationType\":\"EnrollmentInformation\",\"Type\":\"Symantec.Mdm.Library.MS.MSServiceLibrary.Information.EnrollmentInformation\",\"Message\":null,\"MessageCode\":0}\n2015-09-11|05:48:41.851, DEBUG, localhost.localdomain, 4736, mono-service,\nCall, Sending the Request to RabbitMQ - scsem.adminservices.mdm.exchange\n2015-09-11|05:48:41.851, DEBUG, localhost.localdomain, 4736, mono-service,\nCall, Wait on the Response for CorreleationId =\n87cd1a88-bc55-4aac-828a-4c3effb304dd, TimeoutMilliseconds = 30000\n2015-09-11|05:48:41.905, DEBUG, localhost.localdomain, 4736, mono-service,\nMonitorReplyQueue, Subscription has a reply for CorreleationId\n87cd1a88-bc55-4aac-828a-4c3effb304dd.  Getting request from Reqest Map\n2015-09-11|05:48:41.905, DEBUG, localhost.localdomain, 4736, mono-service,\nMonitorReplyQueue, Found a request in the request map for CorreleationId\n87cd1a88-bc55-4aac-828a-4c3effb304dd.\n2015-09-11|05:48:41.905, DEBUG, localhost.localdomain, 4736, mono-service,\nMonitorReplyQueue, Sending Subscription Ack for RabbitMQ for CorreleationId\n87cd1a88-bc55-4aac-828a-4c3effb304dd.\n2015-09-11|05:48:41.906, DEBUG, localhost.localdomain, 4736, mono-service,\nMonitorReplyQueue, Setting Autoreset Event for CorreleationId\n87cd1a88-bc55-4aac-828a-4c3effb304dd.\n2015-09-11|05:48:41.906, DEBUG, localhost.localdomain, 4736, mono-service,\nCall, Removing Entry from Request Map CorreleationId =\n87cd1a88-bc55-4aac-828a-4c3effb304dd\n2015-09-11|05:48:41.906, TRACE, localhost.localdomain, 4736, mono-service,\nSendMessage, Received reply with correlation Id\n87cd1a88-bc55-4aac-828a-4c3effb304dd on reply-to queue:\n{\"status\":500,\"code\":500,\"message\":\"Unable to\nauthenticate\",\"more_info_url\":\"\nhttp://www.symantec.com/business/support/index?page=home\"}\n2015-09-11|05:48:42.825, TRACE, localhost.localdomain, 4736, mono-service,\nProcessResults, Processing WorkItem [DeliveryTag: 42 Result: Ack]\nDoesn\u2019t the highlighted message explain it?  We\u2019re sending the enrollment\nrequest to the solution and it\u2019s having some error (sending a 500) so it\u2019s\nnot completing.\n\u2014Scott", "keywords": ["Major", "Password", "Body", "Query", "Headers", "DEBUG", "error", "CorreleationId", "QueryParameters", "correlation", "code", "having", "Wait", "Param", "queue", "enrollment", "xepmpcustomerid", "Processing", "Request", "password", "Getting", "Result", "Placing", "MonitorReplyQueue", "GetInfoFromConsumer", "Event", "scsemadminservicesmdmexchange", "localhostlocaldomain", "TimeoutMilliseconds", "Send", "xepmpdomainid", "SendMessage", "BuildQueryString", "RoutingKey", "authenticate", "request", "CYOD", "MajorRevision", "Build", "PublicationAddress", "RabbitMQ", "Type", "Found", "ExchangeName", "scsemadminservicesmdmexchangee9b36121119444a7ac1a50366de177c3", "epmpadminmdm", "wwwsymanteccombusinesssupportindex", "ProcessResults", "Device", "InformationType", "http", "bh_svc", "EnrollmentInformation", "direct", "Sending", "pagehome", "Info", "Hostname", "monica031", "Autoreset", "Unable", "solution", "Adding", "SecurityToken", "EnrollRequest", "ExchangeType", "Setting", "Correlation", "applicationjson", "WindowsPhone", "monoservice", "87cd1a88bc554aac828a4c3effb304dd", "Created", "Entry", "xepmpownershiptypeCYOD", "DeliveryTag", "SymantecMdmLibraryMSMSServiceLibraryInformationEnrollmentInformation", "messagetype", "Queue", "message", "Call", "WorkItem", "MinorRevision", "Revision", "WebMethod", "MessageCode", "xrestquerystring", "status", "xepmpownershiptype", "ComparisonVersion", "Received", "Scott", "sending", "Authorization", "Name", "Subscription", "String", "DeviceType", "TRACE", "POST", "highlighted", "xrestverb", "xrestaccept", "RST_PKCS10", "timeout", "more_info_url", "DeviceId", "UserName", "symanteccom", "explain", "ApplicationVersion", "replyto", "WebMethodEnrollRequest", "Reqest", "Doesnt", "Reply", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9eyJpc3MiOiJpZF9lcG1wX2kiLCJzdWIiOiJ7XCJkb21haW5faWRcIjpcImJoX3N2Y1wiLFwic2NvcGVcIjpcInN5c3RlbVwiLFwicHJpdnNcIjpcIntcXFwidmVyXFxcIjoxLFxcXCJjcmVhdGVfZGV2aWNlc1xcXCI6dHJ1ZSxcXFwiY3JlYXRlX3N5c3RlbV90b2tlblxcXCI6dHJ1ZSxcXFwiZW5yb2xsX2RldmljZXNcXFwiOnRydWUsXFxcImdlbmVyYXRlX3JlcG9ydFxcXCI6dHJ1ZSxcXFwibWFuYWdlX2Fkc3luY19qb2JzXFxcIjp0cnVlLFxcXCJtYW5hZ2VfYWxlcnRfcnVsZVxcXCI6dHJ1ZSxcXFwibWFuYWdlX2RldmljZXNcXFwiOnRydWUsXFxcIm1hbmFnZV9kb21haW5cXFwiOnRydWUsXFxcIm1hbmFnZV9saWNlbnNlc1xcXCI6dHJ1ZSxcXFwibWFuYWdlX29yZ2FuaXphdGlvblxcXCI6dHJ1ZSxcXFwibWFuYWdlX3BvbGljeVxcXCI6dHJ1ZSxcXFwibWFuYWdlX3VzZXJzXFxcIjp0cnVlLFxcXCJwcm92aXNpb25fY3VzdG9tZXJcXFwiOnRydWUsXFxcInJlYWRfYWxsX29yZ2FuaXphdGlvbnNcXFwiOnRydWUsXFxcInJlYWRfb3JnYW5pemF0aW9uXFxcIjp0cnVlLFxcXCJyZWFkX2FwbnNfY2VydFxcXCI6dHJ1ZSxcXFwicmVhZF9wYW5lbFxcXCI6dHJ1ZSxcXFwicmVhZF9yZXBvcnRcXFwiOnRydWUsXFxcInNjYW5fYWxsX3VzZXJzXFxcIjp0cnVlLFxcXCJzZW5kX3VzZXJfbWVzc2FnZVxcXCI6dHJ1ZSxcXFwidmlld19wYW5lbFxcXCI6dHJ1ZSxcXFwid3JpdGVfdXNlcnNcXFwiOltcXFwib3JnX3VuaXRzLnFreVhaUXdiVEl1ZVJ6dHM5SXBXdkFcXFwiLFxcXCJ1c2Vycy51c3hUVFRhYlJWS3FvaWxfaEVQY0VRXFxcIl19XCIsXCJjdXN0b21lcl9pZFwiOlwiYmhfc3ZjXCIsXCJ1cmlcIjpcIlwvdjFcL21kclwvdXNlcnNcL3VzeFRUVGFiUlZLcW9pbF9oRVBjRVFcIn0iLCJ2ZXIiOjEsImV4cCI6MTQ0MjAzNjkwNCwiaWF0IjoxNDQxOTUwNTA0LCJqdGkiOiJ3XzFPVERuZFNLLWxQQ0RxR0VHWkVBIn03cFzyjquMN9duOk7qKrCPfOfDl63Al1MUIteLZy4JM", "30000ms", "completing", "Response", "Message", "xresturi", "Minor", "Bearer", "Removing", "Were", "null"], "comments": [], "py/object": "mail_parser.Message"}
+{"sender_address": "Monica_Wang@symantec.com", "time": "Friday, September 11, 2015 at 1:59 PM", "subject": "", "date": "", "sender_name": "Monica Wang", "content": "+ Feliks, in BH Enrollment team\nThanks, Scott\nThat error is actually because one of BH service is not switched on. I just\ntried again with everything running.  I cropped the EnrollmentService.log\nwith only information on my last enrollment.  The only Error I\u2019m getting is\n2015-09-11|17:24:41.409, ERROR, localhost.localdomain, 27281, mono-service,\nFixQueryStrings, Unable to Fix Url Query String Key.  Skipping key.\nSystem.Arg\n   6 Parameter name: key\nAfter that, I can see log saying about device certificate creation\n1023 2015-09-11|17:34:18.554, TRACE, localhost.localdomain, 27281,\nmono-service, BaseDeviceCreation, user cert value:\nMIICkDCCAfmgAwIBAgIDAPURMA0GCSqGSIb3DQEBC\nand sending out XML payload.\n2015-09-11|17:34:18.580, TRACE, localhost.localdomain, 27281, mono-service,\nHandleEnrollmentRequest, Response XML Payload\nI already changed server\u2019s system time, and confirmed it\u2019s the same by\ncommand \u201cdate\u201d. However, I do notice that the log time is not changed\ncorrespondingly. Not sure if this is causing the issue.\nThe device clearly is not calling back MDM check in URL afterwards. It\nshows \u201cunable to enroll\u201d. Please find the attached screenshot.\nThank you!\nMonica", "keywords": ["Thanks", "only", "Please", "localhostlocaldomain", "cropped", "Query", "String", "creation", "monoservice", "issue", "That", "switched", "error", "last", "Skipping", "saying", "Error", "TRACE", "unable", "command", "time", "changed", "attached", "system", "Feliks", "causing", "running", "device", "Parameter", "confirmed", "tried", "same", "BaseDeviceCreation", "Payload", "team", "calling", "information", "sure", "check", "sending", "notice", "payload", "HandleEnrollmentRequest", "afterwards", "SystemArg", "enroll", "user", "enrollment", "shows", "Thank", "Response", "service", "MIICkDCCAfmgAwIBAgIDAPURMA0GCSqGSIb3DQEBC", "everything", "getting", "EnrollmentServicelog", "Monica", "cert", "value", "find", "certificate", "Unable", "ERROR", "FixQueryStrings", "screenshot", "name", "Scott", "Enrollment"], "comments": [{"sender_address": "Scott_Douglass@symantec.com", "time": "Friday, September 11, 2015 at 11:22 AM", "subject": "", "date": "", "sender_name": "Scott Douglass", "content": "Has this ever worked for you?  I.e. Have you already been through Windows\nPhone enrollment successfully returning a valid certificate to the device\n(that it accepts and uses)?\n>From what it looks like, you are now completing the certificate request and\nreturning something that the core processes, but the device doesn\u2019t like\nfor some reason.  Key length, algorithm, etc.\nCan you send a sample request message (EnrollRequest) and your response?\n\u2014Scott", "keywords": ["something", "processes", "EnrollRequest", "uses", "response", "algorithm", "reason", "been", "request", "device", "Have", "ever", "accepts", "Windows", "length", "doesnt", "message", "core", "send", "enrollment", "sample", "worked", "completing", "Phone", "certificate", "Scott", "returning", "valid", "looks"], "comments": [], "py/object": "mail_parser.Message"}, {"sender_address": "Monica_Wang@symantec.com", "time": "Friday, September 11, 2015 at 3:34 PM", "subject": "", "date": "", "sender_name": "Monica Wang", "content": "Thanks, Scott!\nI attached the EnrollRequest and EnrollInformation JSON file.\nWindows 10 enrollment never completed for me actually.  I did try the same\nphone on MobMan. It\u2019s returning failure message on the phone as well.\nPlease refer to the attached screenshot.", "keywords": ["same", "file", "Thanks", "JSON", "attached", "Please", "Windows", "refer", "phone", "message", "MobMan", "EnrollInformation", "screenshot", "failure", "Scott", "completed", "returning", "enrollment", "EnrollRequest"], "comments": [], "py/object": "mail_parser.Message"}, {"sender_address": "Scott_Douglass@symantec.com", "time": "Friday, September 11, 2015 at 12:52 PM", "subject": "", "date": "", "sender_name": "Scott Douglass", "content": "Looked at the certificate response you\u2019re sending back.\nIt\u2019s a self-signed certificate, which isn\u2019t going to fly.\nYou need to complete the certificate against some issuer, then include the\ncert and issuer certs (intermediates to root) in your response.\n>From the MM response, it looks like you\u2019re not getting past\nauthentication.  Or maybe WP enrollment isn\u2019t enabled?\n\u2014Scott", "keywords": ["selfsigned", "Scott", "response", "going", "include", "complete", "Looked", "youre", "issuer", "past", "need", "enabled", "intermediates", "enrollment", "isnt", "certs", "getting", "cert", "root", "certificate", "authentication", "sending", "looks"], "comments": [], "py/object": "mail_parser.Message"}], "py/object": "mail_parser.Message"}
+{"sender_address": "Monica_Wang@symantec.com", "time": "Monday, September 14, 2015 at 5:19 PM", "subject": "", "date": "", "sender_name": "Monica Wang", "content": "+ Mike Bracewell\nHi Scott and Tim,\nAs we don\u2019t have a publicly accessible MPKI interface, I won\u2019t be able to\nsign the CSR in the BH service. Mike points out that  it is MDMCore to call\nMPKI in the Windows 10 Enrollment flow (\nhttps://confluence.ges.symantec.com/pages/viewpage.action?pageId=61479042).\nRight now, the Windows Enrollment Service will reply a Windows\nEnrollRequest with device certificate/root certificate/intermediate\ncertificate? Any idea how will I be able to pass the CSR handling to MDM\nCore?\nThanks,\nMonica", "keywords": ["call", "Thanks", "reply", "have", "confluencegessymanteccompagesviewpageaction", "Mike", "MPKI", "dont", "Core", "wont", "device", "sign", "interface", "Service", "Windows", "able", "MDMCore", "pass", "accessible", "handling", "certificateroot", "flow", "service", "Bracewell", "Monica", "points", "certificate", "idea", "https", "certificateintermediate", "Scott", "Enrollment", "EnrollRequest"], "comments": [{"sender_address": "Scott_Douglass@symantec.com", "time": "Monday, September 14, 2015 at 2:26 PM", "subject": "", "date": "", "sender_name": "Scott Douglass", "content": "+Jim, Kyle\nWe don\u2019t support that currently.  Kyle/Jim would know more of when that\nwork may be scheduled.\n\u2014Scott", "keywords": ["work", "scheduled", "KyleJim", "know", "support", "Scott", "Kyle", "dont"], "comments": [], "py/object": "mail_parser.Message"}, {"sender_address": "Monica_Wang@symantec.com", "time": "Monday, September 14, 2015 at 8:18 PM", "subject": "", "date": "", "sender_name": "Monica Wang", "content": "+ Pi team\nAccording to Apple enrollment flow (\nhttps://confluence.ges.symantec.com/pages/viewpage.action?pageId=2076118 )\nMDM receives then signed CSR to pass to the device. (Phase 4, step 22). Can\nwe have the same support for Windows 10?", "keywords": ["receives", "same", "flow", "signed", "Windows", "support", "team", "Apple", "device", "pass", "confluencegessymanteccompagesviewpageaction", "step", "https", "According", "Phase", "have", "enrollment"], "comments": [], "py/object": "mail_parser.Message"}], "py/object": "mail_parser.Message"}
+{"sender_address": "Scott_Douglass@symantec.com", "time": "Monday, September 14, 2015 at 5:51 PM", "subject": "", "date": "", "sender_name": "Scott Douglass", "content": "With the Apple flow, the MDM server delivers a SCEP profile to the device,\nthen the Profile installer/MDM on the device talks to the SCEP server to\ncomplete the certificate enrollment.  Those diagrams are not accurate.\nThere is no case where an Apple device delivers a CSR to the MDM server and\nthe MDM server completes the request.\nFor Windows 8.1/10, the MDM server receives the WSTEP enrollment, extracts\nthe CSR and forwards that to the solution to complete.  Then the MDM server\nreturns the response to the WSTEP enrollment.  That\u2019s the current\nimplemented and supported flow.  There have been some discussions and\nbeginning plans to do things differently.\n\u2014Scott", "keywords": ["installerMDM", "receives", "completes", "have", "response", "delivers", "discussions", "beginning", "server", "forwards", "extracts", "plans", "request", "been", "profile", "device", "Profile", "case", "complete", "current", "Thats", "things", "Windows", "Apple", "returns", "supported", "diagrams", "enrollment", "implemented", "SCEP", "talks", "flow", "accurate", "certificate", "solution", "Scott", "WSTEP"], "comments": [], "py/object": "mail_parser.Message"}
+{"sender_address": "Chris_Mayor@symantec.com", "time": "Tuesday, September 15, 2015 at 12:08 PM", "subject": "", "date": "", "sender_name": "Chris Mayor", "content": "How far along are the discussions about changing the MDM Core flow here for\nWin10 CSR signing?\nOne option would be to have the SCEP service to expose a simplified signing\ninterface that BH can call when it receives the WSTEP enrollment request.\nThe interface could allow CSRs to be signed without the complexity of SCEP.\nI\u2019ll check with the team maintaining the SCEP service to see how much work\nthis would be to add.\nLet me know if you have other thoughts on how to do this.\nRegards,\nChris", "keywords": ["receives", "work", "call", "Win10", "simplified", "have", "complexity", "CSRs", "Regards", "discussions", "Core", "changing", "thoughts", "request", "maintaining", "interface", "expose", "along", "signed", "check", "team", "signing", "enrollment", "SCEP", "flow", "service", "other", "know", "Chris", "allow", "option", "WSTEP"], "comments": [], "py/object": "mail_parser.Message"}
+{"sender_address": "Jim_Sullivan@symantec.com", "time": "Tuesday, September 15, 2015 at 9:20 AM", "subject": "", "date": "", "sender_name": "Jim Sullivan", "content": "Hello Chris,\nWe had several conversations with the SCEP team about supporting a generic\nget certificate call but that interface was never implemented.  (We\ninitially wanted it for Android certificates.)\nMy understanding that this project no longer has an owner and ultimately we\nwant to move to mPKI.  In fact that was the initial design until mPKI told\nus they couldn\u2019t support our use case.  Thankfully they have had a change\nof heart but I wish it was a few months ago.\nRegards,\nJim", "keywords": ["heart", "call", "project", "generic", "Android", "wanted", "several", "design", "have", "longer", "initial", "Regards", "months", "change", "case", "interface", "couldnt", "told", "wish", "support", "team", "supporting", "implemented", "SCEP", "conversations", "mPKI", "fact", "certificates", "Hello", "Chris", "certificate", "owner", "want", "understanding", "move"], "comments": [{"sender_address": "Monica_Wang@symantec.com", "time": "Tuesday, September 15, 2015 at 12:58 PM", "subject": "", "date": "", "sender_name": "Monica Wang", "content": "Thanks, Chirs,  Jim and Kyle!\nSeems that we have 2 options of Win10 CSR signing, mPKI and SCEP signing\ninterface. Since mPKI is still in POC (MDMCOR-7725\n<https://projira.symclab.net/browse/MDMCOR-7725> ), and there\u2019s no team\nworking on the SCEP, I\u2019m not sure how am I going to proceed this Win10\nenrollment story.\nChris, any idea how we can temporarily bypass SCEP signing to continue\nenrollment?", "keywords": ["Thanks", "Win10", "have", "Kyle", "story", "theres", "going", "Seems", "MDMCOR7725", "continue", "interface", "proceed", "team", "sure", "Chirs", "signing", "working", "enrollment", "SCEP", "bypass", "mPKI", "Chris", "idea", "https", "options"], "comments": [], "py/object": "mail_parser.Message"}, {"sender_address": "Jim_Sullivan@symantec.com", "time": "Tuesday, September 15, 2015 at 10:04 AM", "subject": "", "date": "", "sender_name": "Jim Sullivan", "content": "Hello Monica,\nThe reality is that at the moment you are blocked.  We are trying to figure\nout what can be accelerated to get you unblocked.\nRegards,\nJim", "keywords": ["figure", "accelerated", "Monica", "moment", "blocked", "unblocked", "Hello", "trying", "Regards", "reality"], "comments": [], "py/object": "mail_parser.Message"}], "py/object": "mail_parser.Message"}
+{"sender_address": "Chris_Mayor@symantec.com", "time": "Tuesday, September 15, 2015 at 10:22 AM", "subject": "", "date": "", "sender_name": "Chris Mayor", "content": "The SCEP service is owned by Deepak\u2019s team in Pune (under Todd).  We can\nget them to work on it or better yet take on the work ourselves.  We can\nconsult with John Steenbruggen who was the original author of the service.\nI think mPKI support is a great option and we should continue down that\npath but for the immediate needs get the changes to the SCEP service done.\nI\u2019ll start a conversation with the SCEP team to investigate the needed\nwork.  In the meantime I think we can unblock enrollment by doing the\nsigning within the enrollment service code as a temporary fix.\nRegards,\nChris", "keywords": ["work", "John", "path", "Steenbruggen", "immediate", "meantime", "owned", "investigate", "start", "great", "Regards", "done", "conversation", "doing", "original", "unblock", "continue", "author", "code", "ourselves", "needed", "consult", "Todd", "support", "team", "Deepaks", "signing", "changes", "enrollment", "SCEP", "take", "mPKI", "service", "think", "temporary", "better", "Chris", "Pune", "option", "needs"], "comments": [], "py/object": "mail_parser.Message"}

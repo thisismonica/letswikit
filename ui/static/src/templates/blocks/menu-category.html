@@ -1,0 +1,68 @@
+<div class="row row-same-height padding-40">
+    <div class="col-sm-10">
+        <div class="" ng-repeat="category in menu.$private.type.categories">
+            <div class="row row-same-height">
+                <div class="col-sm-1">
+                    {{$index + 1}}
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group form-group-default">
+                        <label for="{{$index}}-category" >Category (E.g. Desserts)</label>
+                        <input ng-disabled="category.__unknown" type="text" class="form-control"
+                               id="{{$index}}-category" ng-model="category.name">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group form-group-default">
+                        <label for="{{$index}}-description">Description</label>
+                        <textarea ng-disabled="category.__unknown" id="{{$index}}-description" rows="5" class="form-control"
+                                  ng-model="category.description"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <div class="checkbox check-primary">
+                        <input type="checkbox" ng-model="category.__unknown" ng-change="categoryUnknownChanged(category)"
+                               id="{{$index}}-category-unknown">
+                        <label for="{{$index}}-category-unknown">Unknown</label>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <button ng-hide="!category.__enabled" ng-click="goToCategory(category)"
+                            ng-class="{'btn-success': category.__completed, 'btn-complete': !category.__completed}"
+                            class="btn btn-cons btn-animated from-left fa fa-truck">
+                        <span>Go</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <div class="pager wizard">
+            <!-- Done Button-->
+            <div class="next m-b-15 clearfix">
+                <button type="button" ng-click="doneWithCategories()"
+                        class="btn btn-primary btn-cons btn-animated
+                                    from-left fa fa-check pull-right">
+                    <span>Done</span>
+                </button>
+            </div>
+            <!-- end: Done button-->
+            <!-- begin: previous button-->
+            <div class="previous disabled m-b-15 clearfix">
+                <button type="button" class="btn btn-default btn-cons pull-right">
+                    <span>Previous</span>
+                </button>
+            </div>
+            <!-- end: previous button-->
+
+            <!-- begin: Add more -->
+            <div class="m-b-15 clearfix">
+                <button type="button" ng-click="addMenuCategories(menu.$private.type)"
+                        class="btn btn-info btn-cons btn-animated from-left fa fa-plus pull-right">
+                    <span>Add More</span>
+                </button>
+            </div>
+            <!-- end: add more-->
+        </div>
+    </div>
+</div>

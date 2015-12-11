@@ -1,0 +1,18 @@
+<div class="row row-same-height padding-40">
+    <div class="col-md-9">
+        <div ng-repeat="type in menu.types">
+            <h2>{{type.name}}</h2>
+            <h4 class="light">{{type.description}}</h4>
+            <hr>
+            <div class="m-l-30 p-b-20" ng-repeat="category in type.categories">
+                <h3>{{category.name}}</h3>
+                <h5 class="light">{{category.description}}</h5>
+                <div class="m-l-30 p-b-10" ng-repeat="item in category.items">
+                    <h5>{{item.name}}</h5>
+                    <p class="fs-14">{{item.description}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

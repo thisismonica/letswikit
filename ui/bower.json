@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "0.0.2",
+  "authors": [
+    "Suparn Gupta <gupta.suparn@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

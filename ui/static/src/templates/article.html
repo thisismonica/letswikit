@@ -1,0 +1,174 @@
+<div class="article">
+
+    <!-- Navbar -->
+
+    <!-- Paga title -->
+    <div class="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-lg-8">
+                    <h1>Knowledge Base</h1>
+
+                    <p class="tagline">Find answers and help fast</p>
+                </div>
+                <div class="col-sm-4 col-lg-4">
+                    <form role="search" method="get" id="searchform" class="form-search" action="#">
+                        <div class="append-icon">
+                            <input type="text" value="" name="s" id="autocomplete-dynamic" class="form-control input-lg"
+                                   autocomplete="off" placeholder="Enter search term here.">
+                            <span><i class="icon-search"></i></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="wrap container" role="document">
+        <div class="content row">
+            <div class="main col-sm-9" role="main">
+
+                <div class="post hentry">
+                    <header>
+                        <h1 class="entry-title">{{topic.topic}}</h1>
+                    </header>
+
+                    <div class="entry-content">
+                        <p ng-bind-html="topic.question.content | escapeHTML"></p>
+                    </div>
+                    <footer class="post">
+                        <time class="updated">{{topic.question.time}}</time>
+                        <p class="byline author vcard">By <a href="mailto:{{topic.question.sender_address}}"
+                                                             rel="author"
+                                                             class="fn">{{topic.question.sender_name}}</a></p>
+                    </footer>
+                    <ul class="comment byuser comment-author-demopressapps bypostauthor odd alt thread-odd thread-alt depth-1 media unstyled comment-18">
+                        <li class="comment byuser comment-author-demopressapps bypostauthor even depth-2 media comment-20"
+                            ng-repeat="comment in topic.question.comments">
+                            <img alt=""
+                                 src="static/dist/img/avatar.png"
+                                 class="avatar pull-left media-object avatar-72 photo" height="72"
+                                 width="72">
+
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="mailto:{{comment.sender_address}}"
+                                                             rel="external nofollow"
+                                                             class="url">{{comment.sender_name}}</a></h4>
+                                <time datetime="2013-02-05T22:29:23+00:00"><a href="#">{{comment.time}}</a></time>
+                                <p ng-bind-html="comment.content | escapeHTML"></p>
+                                <a class="comment-reply-link" href="#">Reply</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- /.author-box -->
+
+                    <section id="comments">
+                        <h3>{{articles.length}} Responses to “{{topic.topic}}”</h3>
+                        <ol class="media-list">
+
+                            <li ng-repeat="article in topic.messages"
+                                class="comment byuser comment-author-demopressapps bypostauthor even thread-even depth-1 media">
+                                <img alt=""
+                                     src="static/dist/img/avatar.png"
+                                     class="avatar pull-left media-object avatar-72 photo" height="72" width="72">
+
+                                <div class="media-body">
+                                    <h4 class="media-heading"><a href="mailto:{{article.sender_address}}"
+                                                                 rel="external nofollow" class="url">{{article.sender_name}}</a>
+                                    </h4>
+                                    <time datetime="2013-02-05T22:28:55+00:00"><a href="#">{{article.time}}</a></time>
+
+
+                                    <p ng-bind-html="article.content | escapeHTML"></p>
+                                    <a class="comment-reply-link" href="#">Reply</a>
+                                    <ul class="comment byuser comment-author-demopressapps bypostauthor odd alt thread-odd thread-alt depth-1 media unstyled comment-18">
+                                        <li class="comment byuser comment-author-demopressapps bypostauthor even depth-2 media comment-20"
+                                            ng-repeat="comment in article.comments">
+                                            <img alt=""
+                                                 src="static/dist/img/avatar.png"
+                                                 class="avatar pull-left media-object avatar-72 photo" height="72"
+                                                 width="72">
+
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="mailto:{{comment.sender_address}}"
+                                                                             rel="external nofollow"
+                                                                             class="url">{{comment.sender_name}}</a>
+                                                </h4>
+                                                <time datetime="2013-02-05T22:29:23+00:00"><a
+                                                        href="#">{{comment.time}}</a></time>
+                                                <p ng-bind-html="comment.content | escapeHTML"></p>
+                                                <a class="comment-reply-link" href="#">Reply</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                        </ol>
+                    </section>
+                    <!-- /#comments -->
+
+                    <section id="respond">
+                        <h3>Leave a Reply</h3>
+
+                        <p class="cancel-comment-reply"><a rel="nofollow" id="cancel-comment-reply-link" href="#"
+                                                           style="display:none;">Click here to cancel reply.</a></p>
+
+                        <form action="#" method="post" id="commentform">
+                            <div class="form-group">
+                                <label for="author">Name</label>
+                                <input type="text" class="form-control" name="author" id="author" value="" size="22"
+                                       aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" value="" size="22"
+                                       aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="url">Website</label>
+                                <input type="url" class="form-control" name="url" id="url" value="" size="22">
+                            </div>
+                            <div class="form-group">
+                                <label for="comment">Comment</label>
+                                <textarea name="comment" id="comment" class="form-control" rows="5"
+                                          aria-required="true"></textarea>
+                            </div>
+                            <p><input name="submit" class="btn btn-primary" type="submit" id="submit"
+                                      value="Submit Comment"></p>
+                            <input type="hidden" name="comment_post_ID" value="734" id="comment_post_ID">
+                            <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                        </form>
+                    </section>
+                    <!-- /#respond -->
+                </div>
+
+            </div>
+            <!-- /.main -->
+
+            <!-- Sidebar -->
+            <aside class="sidebar col-sm-3" role="complementary" ng-controller="Top">
+                <section class="widget">
+                    <div>
+                        <h3>Top Articles</h3>
+                        <ul>
+                            <li ng-repeat="topic in topics">
+                                <i class="fa fa-fw fa-file-text-o"></i>
+                                <a href="" ng-click="goToTopic(topic)" rel="bookmark">{{topic._source.topic | trim:24}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+            </aside>
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.wrap -->
+
+
+    <div class="autocomplete-suggestions"
+         style="position: absolute; display: none; width: 360px; top: 141px; left: 1170px; max-height: 300px; z-index: 9999;"></div>
+</div>
